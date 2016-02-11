@@ -25,7 +25,7 @@
 
             <div class="jumbotron text-center">
                 <h1>Selamat Datang</h1>
-                <p>Aplikasi penjadwalan berfungsi untuk mengatur jadwal kursus</p>
+                <p>Aplikasi penjadwalan berfungsi untuk mengatur jadwal Praktikum</p>
             </div>
 
         </div>

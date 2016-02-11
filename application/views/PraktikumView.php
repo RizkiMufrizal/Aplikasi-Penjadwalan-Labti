@@ -25,8 +25,8 @@
 
             <div>
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Data Jadwal Kursus</a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Data Jadwal Kursus Kosong</a></li>
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Data Jadwal Praktikum</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Data Jadwal Praktikum Kosong</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -50,7 +50,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($dataKursus as $d) { ?>
+                                <?php foreach ($dataPraktikum as $d) { ?>
                                     <tr>
                                         <td><?php echo $d->hari; ?></td>
                                         <td><?php echo $d->ruang; ?></td>
@@ -66,18 +66,18 @@
 
                         <p></p>
 
-                        <form method="post" action="<?php echo base_url() ?>index.php/KursusController/uploadJadwalKursus" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo base_url() ?>index.php/PraktikumController/uploadJadwalPraktikum" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="exampleInputFile">Upload Data Jadwal Kursus</label>
+                                <label for="exampleInputFile">Upload Data Jadwal Praktikum</label>
                                 <input type="file" name="userfile">
-                                <p class="help-block">Silahkan browse file csv untuk data jadwal kursus</p>
+                                <p class="help-block">Silahkan browse file csv untuk data jadwal praktikum</p>
                             </div>
                             <button type="submit" class="btn btn-success">Upload</button>
                         </form>
                         
                         <p></p>
                         
-                        <a href="<?php echo base_url(); ?>index.php/KursusController/hapusAllDataKursus">
+                        <a href="<?php echo base_url(); ?>index.php/PraktikumController/hapusAllDataPraktikum">
                             <button class="btn btn-danger">Hapus Semua Data</button>
                         </a>
 
@@ -94,7 +94,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($dataKursusKosong as $dk) { ?>
+                                <?php foreach ($dataPraktikumKosong as $dk) { ?>
                                     <tr>
                                         <td><?php echo $dk->hari; ?></td>
                                         <td><?php echo $dk->ruang; ?></td>
@@ -116,10 +116,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah Jadwal Kursus</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Jadwal Praktikum</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="<?php echo base_url(); ?>index.php/KursusController/simpanJadwalKursus" method="post">
+                        <form action="<?php echo base_url(); ?>index.php/PraktikumController/simpanJadwalPraktikum" method="post">
                             <div class="form-group">
                                 <label>Kelas</label>
                                 <input type="text" name="kelas" class="form-control" placeholder="Masukkan Kelas">

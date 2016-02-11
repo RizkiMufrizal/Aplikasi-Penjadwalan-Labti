@@ -1,4 +1,4 @@
-CREATE VIEW `sql_cari_kelas` AS
+CREATE VIEW `cari_kelas_kosong` AS
     SELECT 
         jadwal_kuliah.hari, sesi_kuliah.kelas, sesi_kuliah.sesi
     FROM
@@ -7,4 +7,4 @@ CREATE VIEW `sql_cari_kelas` AS
         sesi_kuliah ON jadwal_kuliah.id_jadwal_kuliah = sesi_kuliah.id_sesi_kuliah
     WHERE
         sesi_kuliah.kelas
-            AND ses_kuliah.mata_kuliah IS NULL
+            AND sesi_kuliah.mata_kuliah IS NULL

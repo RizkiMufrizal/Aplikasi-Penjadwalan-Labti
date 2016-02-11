@@ -10,22 +10,22 @@
  * Package Expression package is undefined on line 12, column 14 in Templates/Scripting/PHPClass.php.
  * 
  */
-class KursusController extends CI_Controller {
+class PraktikumController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Kursus');
+        $this->load->model('Praktikum');
         $this->load->model('Kuliah');
         $this->load->library('CSVReader');
     }
 
-    public function simpanJadwalKursus() {
+    public function simpanJadwalPraktikum() {
 
         $kelas = $this->input->post('kelas');
         $modul = $this->input->post('modul');
 
         $c = $this->Kuliah->getJadwalKosongByKelas($kelas);
-        $b = $this->Kursus->ruangKursusKosong();
+        $b = $this->Praktikum->ruangPraktikumKosong();
 
         $stop = FALSE;
 
@@ -38,9 +38,9 @@ class KursusController extends CI_Controller {
                         'modul' => $modul
                     );
 
-                    $id = $bk->id_sesi_kursus;
+                    $id = $bk->id_sesi_praktikum;
 
-                    $this->Kursus->tambahJadwalKursus($data, $id);
+                    $this->Praktikum->tambahJadwalPraktikum($data, $id);
 
                     $stop = true;
                     break;
@@ -50,16 +50,16 @@ class KursusController extends CI_Controller {
                 break;
             }
         }
-        redirect('kursus');
+        redirect('praktikum');
     }
 
-    public function pageKursus() {
-        $data['dataKursus'] = $this->Kursus->getAllJadwalKursus();
-        $data['dataKursusKosong'] = $this->Kursus->getAllJadwalKursusKosong();
-        $this->load->view('KursusView', $data);
+    public function pagePraktikum() {
+        $data['dataPraktikum'] = $this->Praktikum->getAllJadwalPraktikum();
+        $data['dataPraktikumKosong'] = $this->Praktikum->getAllJadwalPraktikumKosong();
+        $this->load->view('PraktikumView', $data);
     }
 
-    public function uploadJadwalKursus() {
+    public function uploadJadwalPraktikum() {
         $config['upload_path'] = './uploads/';
         $config['allowed_types'] = 'csv';
         $config['max_size'] = '1000';
@@ -76,27 +76,27 @@ class KursusController extends CI_Controller {
 
             $result = $this->csvreader->parse_file($file_path);
             foreach ($result as $row) {
-                $id_jadwal = $this->Kursus->getKursusByHari($row['hari'])[0]->id_jadwal_kursus;
+                $id_jadwal = $this->Praktikum->getPraktikumByHari($row['hari'])[0]->id_jadwal_praktikum;
 
-                $id = $this->Kursus->getRuangKursusByRuangAndId($row['ruang'], $id_jadwal)[0]->id_ruang_kursus;
+                $id = $this->Praktikum->getRuangPraktikumByRuangAndId($row['ruang'], $id_jadwal)[0]->id_ruang_praktikum;
 
                 $val = array(
                     'sesi' => $row['sesi'],
                     'modul' => empty($row['modul']) ? NULL : $row['modul'],
                     'kelas' => empty($row['kelas']) ? NULL : $row['kelas'],
-                    'id_ruang_kursus' => $id
+                    'id_ruang_praktikum' => $id
                 );
 
-                $this->Kursus->simpanJadwalKursus($val);
+                $this->Praktikum->simpanJadwalPraktikum($val);
             }
 
-            redirect('kursus');
+            redirect('praktikum');
         }
     }
 
-    public function hapusAllDataKursus() {
-        $this->Kursus->hapusAllDataKursus();
-        redirect('kursus');
+    public function hapusAllDataPraktikum() {
+        $this->Praktikum->hapusAllDataPraktikum();
+        redirect('praktikum');
     }
 
 }
