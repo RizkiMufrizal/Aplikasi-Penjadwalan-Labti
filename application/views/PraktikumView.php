@@ -35,6 +35,17 @@
 
                         <p></p>
 
+                        <form method="post" action="<?php echo base_url() ?>index.php/PraktikumController/uploadListKelas" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Upload Data Kelas Dan Mata Praktikum</label>
+                                <input type="file" name="userfile">
+                                <p class="help-block">Silahkan browse file csv untuk Data Kelas Dan Mata Praktikum</p>
+                            </div>
+                            <button type="submit" class="btn btn-success">Upload</button>
+                        </form>
+
+                        <p></p>
+
                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Tambah</button>
 
                         <p></p>
@@ -46,7 +57,7 @@
                                     <th class="text-center">Ruang</th>
                                     <th class="text-center">Kelas</th>
                                     <th class="text-center">Sesi</th>
-                                    <th class="text-center">Modul</th>
+                                    <th class="text-center">Mata Praktikum</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,7 +67,7 @@
                                         <td><?php echo $d->ruang; ?></td>
                                         <td><?php echo $d->kelas; ?></td>
                                         <td><?php echo $d->sesi; ?></td>
-                                        <td><?php echo $d->modul; ?></td>
+                                        <td><?php echo $d->mata_praktikum; ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -74,9 +85,9 @@
                             </div>
                             <button type="submit" class="btn btn-success">Upload</button>
                         </form>
-                        
+
                         <p></p>
-                        
+
                         <a href="<?php echo base_url(); ?>index.php/PraktikumController/hapusAllDataPraktikum">
                             <button class="btn btn-danger">Hapus Semua Data</button>
                         </a>
@@ -100,7 +111,7 @@
                                         <td><?php echo $dk->ruang; ?></td>
                                         <td><?php echo (empty($dk->kelas) ? 'kosong' : $dk->kelas) ?></td>
                                         <td><?php echo $dk->sesi; ?></td>
-                                        <td><?php echo (empty($dk->modul) ? 'kosong' : $dk->modul) ?></td>
+                                        <td><?php echo (empty($dk->mata_praktikum) ? 'kosong' : $dk->mata_praktikum) ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
