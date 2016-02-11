@@ -24,3 +24,8 @@ Merupakan aplikasi yang dibangun untuk kebutuhan penjadwalan di laboratorium tek
 * Shift 4 : Jam 6 + Jam 8
 * Shift 5 : Jam 8 + Jam 10
 * Shift 6 : Jam 10 + Jam 12
+
+## Shift Yang Kosong
+
+* Shift 3 pada hari jumat
+* Shift 6 pada hari sabtu
