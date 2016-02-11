@@ -45,5 +45,7 @@ Merupakan aplikasi yang dibangun untuk kebutuhan penjadwalan di laboratorium tek
     7. jalankan query `query_jadwal_praktikum.sql` berfungsi membuat tabel view untuk mencari jadwal praktikum
 
 * upload file `Data-Dami-Jadwal-Kuliah.csv` untuk jadwal kuliah
+
 * upload file `Data-Dami-Jadwal-Praktikum.csv` untuk jadwal praktikum yang kosong
+
 * upload file `Data-Dami-List-Kelas-MataPraktikum.csv` untuk list kelas beserta mata praktikum
