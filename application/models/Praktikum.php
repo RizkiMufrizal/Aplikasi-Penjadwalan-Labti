@@ -21,17 +21,19 @@ class Praktikum extends CI_Model {
     public function tambahJadwalPraktikum($dataPraktikum, $id) {
         $data = array(
             'kelas' => $dataPraktikum['kelas'],
-            'modul' => $dataPraktikum['modul']
+            'mata_praktikum' => $dataPraktikum['mata_praktikum']
         );
         $this->db->where('id_sesi_praktikum', $id);
         $this->db->update('sesi_praktikum', $data);
     }
 
     public function getAllJadwalPraktikum() {
+        $this->db->order_by("kelas", "asc");
         return $this->db->get('query_jadwal_praktikum')->result();
     }
 
     public function getAllJadwalPraktikumKosong() {
+        $this->db->order_by("kelas", "asc");
         return $this->db->get('cari_ruang_sesi_praktikum_kosong')->result();
     }
 
