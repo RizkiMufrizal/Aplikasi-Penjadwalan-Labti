@@ -126,7 +126,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Modul</label>
-                                <input type="text" name="modul" class="form-control" placeholder="Masukkan Modul">
+                                <input type="text" name="mata_praktikum" class="form-control" placeholder="Masukkan Mata Praktikum">
                             </div>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
                             <button type="submit" class="btn btn-primary">Simpan</button>
