@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS sesi_praktikum (
     id_sesi_praktikum VARCHAR(36) NOT NULL,
     sesi INT(1) NOT NULL,
     kelas VARCHAR(6),
-    mata_praktikum VARCHAR(15),
+    mata_praktikum VARCHAR(50),
     id_ruang_praktikum VARCHAR(36) NOT NULL,
     PRIMARY KEY (id_sesi_praktikum),
     FOREIGN KEY (id_ruang_praktikum)
