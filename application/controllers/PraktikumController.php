@@ -22,7 +22,7 @@ class PraktikumController extends CI_Controller {
     public function simpanJadwalPraktikum() {
 
         $kelas = $this->input->post('kelas');
-        $modul = $this->input->post('modul');
+        $mata_praktikum = $this->input->post('mata_praktikum');
 
         $c = $this->Kuliah->getJadwalKosongByKelas($kelas);
         $b = $this->Praktikum->ruangPraktikumKosong();
@@ -35,7 +35,7 @@ class PraktikumController extends CI_Controller {
 
                     $data = array(
                         'kelas' => $kelas,
-                        'modul' => $modul
+                        'mata_praktikum' => $mata_praktikum
                     );
 
                     $id = $bk->id_sesi_praktikum;
@@ -82,7 +82,7 @@ class PraktikumController extends CI_Controller {
 
                 $val = array(
                     'sesi' => $row['sesi'],
-                    'modul' => empty($row['modul']) ? NULL : $row['modul'],
+                    'mata_praktikum' => empty($row['mata_praktikum']) ? NULL : $row['mata_praktikum'],
                     'kelas' => empty($row['kelas']) ? NULL : $row['kelas'],
                     'id_ruang_praktikum' => $id
                 );
