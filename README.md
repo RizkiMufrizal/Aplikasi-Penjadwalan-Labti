@@ -29,3 +29,21 @@ Merupakan aplikasi yang dibangun untuk kebutuhan penjadwalan di laboratorium tek
 
 * Shift 3 pada hari jumat
 * Shift 6 pada hari sabtu
+
+
+## Cara Menjalankan
+
+* Silahkan buat database dengan nama `labti_penjadwalan`
+* pilih database tersebut kemudian jalankan query - query yang terdapat di dalam folder `sql, csv dan table view` secara berurutan seperti berikut :
+    
+    1. jalankan query `labti_penjadwalan.sql` untuk membuat semua tabel
+    2. jalankan query `seed_kuliah.sql` untuk data seed kuliah
+    3. jalankan query `seed_praktikum.sql` untuk data seed praktikum
+    4. jalankan query `cari_kelas_kosong.sql` berfungsi membuat tabel view untuk mencari kelas yang kosong
+    5. jalankan query `cari_ruang_sesi_praktikum_kosong.sql` berfungsi membuat tabel view untuk mencari sesi, ruang praktikum yang kosong
+    6. jalankan query `query_jadwal_kuliah.sql` berfungsi membuat tabel view untuk mencari jadwal kuliah
+    7. jalankan query `query_jadwal_praktikum.sql` berfungsi membuat tabel view untuk mencari jadwal praktikum
+
+* upload file `Data-Dami-Jadwal-Kuliah.csv` untuk jadwal kuliah
+* upload file `Data-Dami-Jadwal-Praktikum.csv` untuk jadwal praktikum yang kosong
+* upload file `Data-Dami-List-Kelas-MataPraktikum.csv` untuk list kelas beserta mata praktikum
