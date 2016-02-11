@@ -10,4 +10,4 @@ CREATE VIEW `query_jadwal_kuliah` AS
             INNER JOIN
         `sesi_kuliah` ON `jadwal_kuliah`.`id_jadwal_kuliah` = `sesi_kuliah`.`id_jadwal_kuliah`
     WHERE
-        `sesi_kuliah`.`kelas` IS NOT NULL
+        `sesi_kuliah`.`mata_kuliah` IS NOT NULL
