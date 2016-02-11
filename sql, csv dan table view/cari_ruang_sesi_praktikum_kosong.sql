@@ -2,7 +2,7 @@ CREATE VIEW `cari_ruang_sesi_praktikum_kosong` AS
 SELECT 
     `jadwal_praktikum`.`hari`,
     `ruang_praktikum`.`ruang`,
-    `sesi_praktikum`.`modul`,
+    `sesi_praktikum`.`mata_praktikum`,
     `sesi_praktikum`.`kelas`,
     `sesi_praktikum`.`sesi`
 FROM
