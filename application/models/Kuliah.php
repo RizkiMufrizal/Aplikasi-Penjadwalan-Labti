@@ -13,10 +13,12 @@
 class Kuliah extends CI_Model {
 
     public function getAllJadwalKuliah() {
+        $this->db->order_by("kelas", "asc");
         return $this->db->get('query_jadwal_kuliah')->result();
     }
 
     public function getAllJadwalKuliahKosong() {
+        $this->db->order_by("kelas", "asc");
         return $this->db->get('cari_kelas_kosong')->result();
     }
 
