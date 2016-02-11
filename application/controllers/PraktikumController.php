@@ -94,6 +94,59 @@ class PraktikumController extends CI_Controller {
         }
     }
 
+    public function uploadListKelas() {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'csv';
+        $config['max_size'] = '1000';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+            $data['error'] = $this->upload->display_errors();
+
+            $this->load->view('csvindex', $data);
+        } else {
+            $file_data = $this->upload->data();
+            $file_path = './uploads/' . $file_data['file_name'];
+
+            $result = $this->csvreader->parse_file($file_path);
+            foreach ($result as $row) {
+
+                $kelas = $row['kelas'];
+                $mata_praktikum = $row['mata_praktikum'];
+
+                $c = $this->Kuliah->getJadwalKosongByKelas($kelas);
+                $b = $this->Praktikum->ruangPraktikumKosong();
+
+                $stop = FALSE;
+
+                foreach ($c as $ck) {
+                    foreach ($b as $bk) {
+                        if ($ck->sesi == $bk->sesi) {
+
+                            $data = array(
+                                'kelas' => $kelas,
+                                'mata_praktikum' => $mata_praktikum
+                            );
+
+                            $id = $bk->id_sesi_praktikum;
+
+                            $this->Praktikum->tambahJadwalPraktikum($data, $id);
+
+                            $stop = true;
+                            break;
+                        }
+                    }
+                    if ($stop) {
+                        break;
+                    }
+                }
+            }
+
+            redirect('praktikum');
+        }
+    }
+
     public function hapusAllDataPraktikum() {
         $this->Praktikum->hapusAllDataPraktikum();
         redirect('praktikum');
