@@ -53,7 +53,7 @@ class Praktikum extends CI_Model {
             'id_sesi_praktikum' => $this->uuid->v4(),
             'kelas' => $dataPraktikum['kelas'],
             'sesi' => $dataPraktikum['sesi'],
-            'modul' => $dataPraktikum['modul'],
+            'mata_praktikum' => $dataPraktikum['mata_praktikum'],
             'id_ruang_praktikum' => $dataPraktikum['id_ruang_praktikum']
         );
         $this->db->insert('sesi_praktikum', $val);
