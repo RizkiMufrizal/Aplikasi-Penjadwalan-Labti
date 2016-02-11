@@ -18,12 +18,12 @@ Merupakan aplikasi yang dibangun untuk kebutuhan penjadwalan di laboratorium tek
 
 ## Shift Lab
 
-* Shift 1 : Jam 1 + Jam 2
-* Shift 2 : Jam 2 + Jam 4
-* Shift 3 : Jam 4 + Jam 6
-* Shift 4 : Jam 6 + Jam 8
-* Shift 5 : Jam 8 + Jam 10
-* Shift 6 : Jam 10 + Jam 12
+* Shift 1 : Jam 1 + Jam 2   : 07:30 - 09:30
+* Shift 2 : Jam 3 + Jam 4   : 09:30 - 11:30
+* Shift 3 : Jam 5 + Jam 6   : 11:30 - 13:30
+* Shift 4 : Jam 7 + Jam 8   : 13:30 - 15:30
+* Shift 5 : Jam 9 + Jam 10  : 15:30 - 17:30
+* Shift 6 : Jam 11 + Jam 12 : 17:30 - 19:30
 
 ## Shift Yang Kosong
 
